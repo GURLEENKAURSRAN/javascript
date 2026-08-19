@@ -1,52 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Practice</title>
-  </head>    
-
+  <head></head>
   <body>
+    <button onclick="
+      playGame('heads');
+    ">heads</button>
+
+    <button onclick="
+      playGame('tails');
+    ">tails</button>
+
     <script>
-      /*
-      const product={
-        name:'shirt',
-        price:20,
-      'delivery-time':'1 day',
-      rating:{
-        stars:4.5,
-        count:87
-      },
-      fun: function function1(){
-        console.log('functon inside object');
+      let score = {
+        wins: 0,
+        losses: 0
+      };
+
+        const randomNumber = Math.random();
+        const result = randomNumber < 0.5 ? 'heads' : 'tails';
+
+        function playGame(guess) {
+        console.log(guess === result ? 'You win!' : 'You lose!');
+
+        if (guess === result) {
+          score.wins++;
+        } else {
+          score.losses++;
+        }
+        console.log(score);
       }
-      }
-
-      console.log(product);
-      console.log(product['name']);
-      console.log(product['price']);
-      console.log(product['delivery-time']);
-      console.log(product.rating.stars);
-      product.fun();
-      console.log(typeof console.log);
-      console.log(product);
-
-      console.log(JSON.stringify(product));
-
-      console.log(JSON.parse(JSON.stringify(product)));
-      */
-
-      console.log("hello".length);
-      console.log("hello".toUpperCase());
-      console.log(3.0.toString());
-      console.log(true.toString());
-
-      const object1={
-        message:'hello',
-      }
-
-      const obj2=object1;
-      object1.message='goodbye';
-      console.log(object1.message);  
-      console.log(obj2.message);  
     </script>
   </body>
 </html>
